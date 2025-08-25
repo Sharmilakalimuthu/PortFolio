@@ -1,3 +1,4 @@
+/* ===== Base ===== */
 body {
   margin: 0;
   padding: 0;
@@ -5,9 +6,10 @@ body {
   background-color: #0f172a;
   color: #f8fafc;
   display: flex;
+  scroll-behavior: smooth;
 }
 
-/* Sidebar */
+/* ===== Sidebar ===== */
 .sidebar {
   width: 250px;
   background-color: #1e293b;
@@ -53,22 +55,55 @@ body {
   display: block;
   margin: 4px 0;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+.sidebar .contact-info a:hover {
+  color: #0ea5e9;
+}
+
+/* Resume Button */
+.btn-download {
+  display: inline-block;
+  background-color: #0ea5e9;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 15px 0;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+  background-color: #0284c7;
+  transform: translateY(-3px);
+}
+
+/* ===== Sidebar Links Two Column ===== */
 .sidebar .nav-links {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 5px;
   margin-top: 20px;
 }
 
 .sidebar .nav-links a {
-  display: block;
-  padding: 10px 15px;
-  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 10px;
   color: #cbd5e1;
   text-decoration: none;
   font-weight: 600;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.sidebar .nav-links a i {
+  margin-right: 8px;
+  transition: transform 0.3s;
 }
 
 .sidebar .nav-links a:hover {
@@ -76,7 +111,17 @@ body {
   color: #0ea5e9;
 }
 
-/* Main content */
+.sidebar .nav-links a:hover i {
+  transform: rotate(20deg);
+}
+
+/* Active link style */
+.sidebar .nav-links a.active {
+  background-color: #0ea5e9;
+  color: #1e293b;
+}
+
+/* ===== Main Content ===== */
 .main {
   margin-left: 250px;
   width: calc(100% - 250px);
@@ -116,16 +161,56 @@ body {
   color: #60a5fa;
 }
 
+/* ===== Lists ===== */
 ul {
   padding-left: 20px;
   line-height: 1.8;
 }
 
-.highlight {
+/* Highlight text */
+.highlight, .proj-title, .cert-course {
   font-weight: 600;
   color: #38bdf8;
 }
 
+/* Bullet styling */
+.proj-list li::before,
+.cert-list li::before {
+  content: "\2022"; /* bullet */
+  color: #ffffff; /* white bullet */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Lists without default bullets */
+.proj-list, .cert-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.proj-list li, .cert-list li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Inline links */
+.view-link {
+  color: #38bdf8;
+  margin-left: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.view-link:hover {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+/* Standard links */
 .link {
   color: #38bdf8;
   text-decoration: none;
@@ -143,6 +228,7 @@ footer {
   margin-top: 40px;
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .sidebar {
     display: none;
