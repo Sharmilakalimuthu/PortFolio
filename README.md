@@ -32,9 +32,7 @@ Welcome to my personal portfolio repository! This project showcases my skills, p
 
 ---
 
-## 🚀 How to Run
+🌐 Live Demo
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Sharmilakalimuthu/PortFolio.git
+Check out the live version of my portfolio here:
+Portfolio Live Demo
